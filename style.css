@@ -353,12 +353,34 @@ footer p {
         text-align: center;
     }
 
-    header .logo {
-        margin-bottom: 15px;
+    header {
+        height: auto; /* Allow header height to adjust based on content */
+        min-height: 180px; /* Increased min-height for more space */
+        background-position: center 10px; /* Position logo slightly from the top */
+        background-size: 100px auto; /* Adjust background logo size for mobile */
+        padding-top: 30px; /* More padding to push content down from logo */
+        padding-bottom: 20px; /* More padding at the bottom for nav */
+        display: block; /* Change to block to allow vertical stacking of content */
+    }
+
+    header nav {
+        margin-left: 0; /* Remove auto margin for centering */
+        width: 100%;
+        margin-top: 15px; /* Add margin between logo area and nav */
+    }
+
+    header nav ul {
+        flex-direction: column; /* Stack navigation items vertically */
+        align-items: center;
+        padding-top: 0; /* Remove extra padding here */
     }
 
     header nav ul li {
-        margin: 0 10px;
+        margin: 10px 0; /* Adjusted vertical spacing between nav items */
+    }
+
+    header nav ul li a {
+        font-size: 1.1em; /* Make navigation links slightly larger for mobile */
     }
 
     .hero h1 {
