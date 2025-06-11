@@ -346,53 +346,68 @@ footer p {
 @media (max-width: 768px) {
     .container {
         width: 95%;
-    }
-
-    header .container {
-        flex-direction: column;
-        text-align: center;
+        padding: 0 10px; /* Adjust container padding for smaller screens */
     }
 
     header {
-        height: auto; /* Allow header height to adjust based on content */
-        min-height: 180px; /* Increased min-height for more space */
-        background-position: center 10px; /* Position logo slightly from the top */
-        background-size: 100px auto; /* Adjust background logo size for mobile */
-        padding-top: 30px; /* More padding to push content down from logo */
-        padding-bottom: 20px; /* More padding at the bottom for nav */
-        display: block; /* Change to block to allow vertical stacking of content */
+        height: auto; /* Allow header height to adapt */
+        min-height: 150px; /* Slightly reduced min-height, focus on content */
+        display: flex; /* Ensure it's a flex container */
+        flex-direction: column; /* Stack children (container) vertically */
+        justify-content: flex-start; /* Align content to the top */
+        padding: 10px 0; /* Adjusted overall header padding */
+        background-position: center 10px; /* Position logo from the top */
+        background-size: 100px auto; /* Adjust background logo size for mobile, smaller */
+        background-color: #526A5A; /* Ensure background color is consistent */
+    }
+
+    header .container {
+        flex-direction: column; /* Stack items vertically */
+        text-align: center;
+        padding: 0; /* Remove internal padding, header padding handles it */
+        align-items: center; /* Center items for single column */
+        width: 100%; /* Ensure container takes full width */
     }
 
     header nav {
         margin-left: 0; /* Remove auto margin for centering */
         width: 100%;
-        margin-top: 15px; /* Add margin between logo area and nav */
+        margin-top: 10px; /* Reduced margin between logo area and nav */
     }
 
     header nav ul {
         flex-direction: column; /* Stack navigation items vertically */
         align-items: center;
-        padding-top: 0; /* Remove extra padding here */
+        padding-top: 0; /* No extra padding here */
     }
 
     header nav ul li {
-        margin: 10px 0; /* Adjusted vertical spacing between nav items */
+        margin: 5px 0; /* Reduced vertical spacing between nav items */
     }
 
     header nav ul li a {
-        font-size: 1.1em; /* Make navigation links slightly larger for mobile */
+        font-size: 1em; /* Standard font size for mobile links */
+        padding: 8px 15px; /* Add more padding for easier tapping */
+        border-radius: 5px; /* Rounded corners for links */
+        background-color: rgba(255, 255, 255, 0.1); /* Subtle background for links */
+        display: block; /* Make links block to take full width of padding */
+        color: var(--white); /* Ensure white text on dark background */
+    }
+
+    header nav ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.2); /* Slightly darker on hover */
     }
 
     .hero h1 {
-        font-size: 2.5em;
+        font-size: 2.2em;
     }
 
     .hero p {
-        font-size: 1.1em;
+        font-size: 1em;
     }
 
     h1, h2, h3 {
-        font-size: 2em;
+        font-size: 1.8em;
     }
 
     .concept-grid, .feature-grid {
@@ -406,14 +421,14 @@ footer p {
 
 @media (max-width: 480px) {
     .hero h1 {
-        font-size: 2em;
+        font-size: 1.8em;
     }
 
     .hero p {
-        font-size: 1em;
+        font-size: 0.9em;
     }
 
     h1, h2, h3 {
-        font-size: 1.8em;
+        font-size: 1.6em;
     }
 } 
