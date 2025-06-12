@@ -70,15 +70,22 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 20px 0;
+    background-color: #616c61;
+    padding: 0;
     z-index: 1000;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
 }
 
 header.scrolled {
-    background-color: white;
+    background-color: #616c61;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    visibility: visible;
 }
 
 header .container {
@@ -91,7 +98,10 @@ header .container {
 }
 
 header .logo {
-    display: none;
+    display: block;
+    height: 70px;
+    width: auto;
+    margin-right: 20px;
 }
 
 header nav {
@@ -180,7 +190,7 @@ section:nth-of-type(even) {
 }
 
 /* Concept Section */
-.concept-section h2, .features-section h2, .impact-section h2, .contact-section h2 {
+.concept-section h2, .features-section h2, .impact-section h2 {
     font-size: 2.8em;
     margin-bottom: 50px;
 }
@@ -250,7 +260,7 @@ section:nth-of-type(even) {
 .feature-card h3 {
     color: var(--primary-green);
     font-size: 1.8em;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .feature-card p {
@@ -260,136 +270,105 @@ section:nth-of-type(even) {
 
 /* Impact Section */
 .impact-section p {
+    text-align: center;
     font-size: 1.2em;
     max-width: 800px;
-    margin: 0 auto 40px auto;
-    text-align: center;
-    color: #444;
+    margin: 0 auto 30px auto;
 }
 
 .impact-section ul {
     list-style: none;
     padding: 0;
-    margin-top: 20px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 15px;
+    margin-top: 30px;
 }
 
 .impact-section li {
     background: var(--primary-green);
-    color: var(--white);
-    margin-bottom: 10px;
-    padding: 12px 20px;
+    padding: 12px 25px;
     border-radius: 50px;
-    box-shadow: var(--shadow-light);
-    font-weight: 500;
-    transition: background 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 1.1em;
+    color: var(--white);
+    font-weight: 700;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .impact-section li:hover {
     background: var(--dark-green);
 }
 
-/* Contact Section */
-.contact-section form {
-    max-width: 700px;
-    margin: 50px auto 0;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    background: var(--white);
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: var(--shadow-medium);
-}
-
-.contact-section input, .contact-section textarea {
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1em;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-section input:focus, .contact-section textarea:focus {
-    border-color: var(--primary-green);
-    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
-    outline: none;
-}
-
-.contact-section textarea {
-    min-height: 150px;
-    resize: vertical;
-}
-
-.contact-section .btn {
-    width: fit-content;
-    align-self: center;
-}
-
 /* Footer */
 footer {
-    background: #222;
-    color: #ccc;
+    background-color: var(--dark-green);
+    color: var(--white);
     text-align: center;
     padding: 30px 0;
-    margin-top: 50px;
-    font-size: 0.9em;
+    margin-top: 20px;
+    border-radius: 10px;
 }
 
 footer p {
     margin: 0;
+    font-size: 0.9em;
 }
 
 /* Team Section */
 .team-section {
+    background-color: var(--white);
     padding: 80px 0;
-    background-color: #f9f9f9;
+    text-align: center;
 }
 
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 .team-member {
-    background: white;
+    background: var(--light-green);
+    padding: 25px;
     border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .team-member:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-medium);
 }
 
 .member-image {
     width: 100px;
     height: 100px;
-    margin: 0 auto 15px;
-    background-color: #4CAF50;
     border-radius: 50%;
+    background-color: var(--primary-green);
     display: flex;
-    align-items: center;
     justify-content: center;
-    color: white;
+    align-items: center;
+    margin: 0 auto 20px auto;
+    color: var(--white);
+    font-size: 1em;
 }
 
 .team-member h3 {
-    margin: 10px 0 5px;
-    color: #333;
+    color: var(--dark-green);
+    margin-bottom: 10px;
+    font-size: 1.6em;
 }
 
 .team-member p {
     color: #666;
-    font-size: 0.9em;
+    font-size: 0.7em;
+    word-break: break-word;
 }
 
 /* Video Container */
@@ -453,81 +432,62 @@ footer p {
 @media (max-width: 768px) {
     .container {
         width: 95%;
-        padding: 0 10px; /* Adjust container padding for smaller screens */
+        padding: 15px 0;
     }
 
     header {
-        height: auto; /* Allow header height to adapt */
-        min-height: 150px; /* Slightly reduced min-height, focus on content */
-        display: flex; /* Ensure it's a flex container */
-        flex-direction: column; /* Stack children (container) vertically */
-        justify-content: flex-start; /* Align content to the top */
-        padding: 10px 0; /* Adjusted overall header padding */
-        background-position: center 10px; /* Position logo from the top */
-        background-size: 100px auto; /* Adjust background logo size for mobile, smaller */
-        background-color: #526A5A; /* Ensure background color is consistent */
+        padding: 0;
+        min-height: 60px;
     }
 
     header .container {
-        flex-direction: column; /* Stack items vertically */
-        text-align: center;
-        padding: 0; /* Remove internal padding, header padding handles it */
-        align-items: center; /* Center items for single column */
-        width: 100%; /* Ensure container takes full width */
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0 15px;
+    }
+
+    header .logo {
+        margin-right: 10px;
     }
 
     header nav {
-        margin-left: 0; /* Remove auto margin for centering */
-        width: 100%;
-        margin-top: 10px; /* Reduced margin between logo area and nav */
+        margin-left: auto;
+        margin-top: 0;
     }
 
     header nav ul {
-        flex-direction: column; /* Stack navigation items vertically */
-        align-items: center;
-        padding-top: 0; /* No extra padding here */
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     header nav ul li {
-        margin: 5px 0; /* Reduced vertical spacing between nav items */
+        margin: 0 15px 10px 15px;
     }
 
     header nav ul li a {
-        font-size: 1em; /* Standard font size for mobile links */
-        padding: 8px 15px; /* Add more padding for easier tapping */
-        border-radius: 5px; /* Rounded corners for links */
-        background-color: rgba(255, 255, 255, 0.1); /* Subtle background for links */
-        display: block; /* Make links block to take full width of padding */
-        color: var(--white); /* Ensure white text on dark background */
-    }
-
-    header nav ul li a:hover {
-        background-color: rgba(255, 255, 255, 0.2); /* Slightly darker on hover */
+        font-size: 0.9em;
     }
 
     .hero h1 {
-        font-size: 2.2em;
+        font-size: 3em;
     }
 
     .hero p {
-        font-size: 1em;
+        font-size: 1.2em;
     }
 
     h1, h2, h3 {
-        font-size: 1.8em;
+        font-size: 2.2em;
+        margin-bottom: 20px;
     }
 
     .concept-grid, .feature-grid {
         grid-template-columns: 1fr;
     }
 
-    .contact-section form {
-        padding: 20px;
-    }
-
     .team-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 20px;
+        grid-template-columns: 1fr;
     }
 
     .video-container {
@@ -541,6 +501,10 @@ footer p {
     .video-title {
         font-size: 3rem;
         letter-spacing: 0.3rem;
+    }
+
+    .member-image {
+        font-size: 1em;
     }
 }
 
